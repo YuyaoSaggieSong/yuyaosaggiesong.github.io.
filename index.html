@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yuyao Song · Regenerative Biology &amp; AI</title>
+  <meta name="description" content="Yuyao Song — Biology student researching transverse fission regeneration methods for human bone tissue applications at the intersection of biology and AI.">
+  <link rel="canonical" href="https://yuyaosaggiesong.github.io">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Yuyao Song · Regenerative Biology &amp; AI">
+  <meta property="og:description" content="Yuyao Song — Biology student researching transverse fission regeneration methods for human bone tissue applications at the intersection of biology and AI.">
+  <meta property="og:url" content="https://yuyaosaggiesong.github.io">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-color: #e2e8f0;
+      --accent: #0284c7;
+      --accent-hover: #0369a1;
+      --accent-light: #f0f9ff;
+      --mark-bg: #fef08a;
+      --mark-text: #1e293b;
+      --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 0 1.5rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    mark {
+      background-color: var(--mark-bg);
+      color: var(--mark-text);
+      padding: 0.12em 0.35em;
+      border-radius: 3px;
+      font-weight: 500;
+    }
+
+    /* Hero / First Screen */
+    header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .status-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid #bae6fd;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .one-liner {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--accent);
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta-button:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .now-box {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 0.85rem 1.1rem;
+      border-radius: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+
+    .now-label {
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    h2 {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Featured Cards */
+    .featured-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .featured-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.35rem 1.5rem;
+    }
+
+    .featured-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.925rem;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .field-label {
+      font-family: var(--font-mono);
+      font-size: 0.725rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Work Section */
+    .work-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .work-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      font-size: 0.925rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .work-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .work-date {
+      font-family: var(--font-mono);
+      font-size: 0.825rem;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      width: 80px;
+    }
+
+    .work-title {
+      color: var(--text-main);
+    }
+
+    /* About Section */
+    .about-bio {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--text-main);
+      margin-bottom: 1.75rem;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      list-style: none;
+    }
+
+    .contact-link {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-main);
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      background: var(--card-bg);
+      padding: 0.5rem 0.9rem;
+      border-radius: 5px;
+      transition: all 0.15s ease;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    footer {
+      padding: 2rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.775rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .work-item {
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+      .work-date {
+        width: auto;
+      }
+      header {
+        padding: 2.5rem 0 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- FIRST SCREEN -->
+    <header>
+      <span class="status-badge">Undergraduate Research Base</span>
+      <h1>Yuyao Song</h1>
+      <p class="one-liner">Finding and replicating the regeneration method in transverse fission and applying it to human bone tissue.</p>
+      <a href="mailto:yuyao18@ualberta.ca" class="cta-button">Inquire for Summer Intern / Lab Volunteer Position &rarr;</a>
+
+      <div class="now-box">
+        <span class="now-label">Now:</span>
+        <span><mark>[What are you working on this month?]</mark></span>
+      </div>
+    </header>
+
+    <!-- FEATURED SECTION -->
+    <section>
+      <h2>Featured Research &amp; Projects</h2>
+      <div class="featured-list">
+
+        <article class="featured-card">
+          <h3>Transverse Fission Regeneration in Human Bone Tissue</h3>
+          <div class="field-group">
+            <div class="field">
+              <span class="field-label">Problem</span>
+              <p>Manipulating tissue to bring cells back to their initial state carries the risk of turning them into cancerous tissue (cellular oncogenesis).</p>
+            </div>
+            <div class="field">
+              <span class="field-label">Decision</span>
+              <p><mark>[What decision did you make regarding experimental setup or mechanism selection, and why?]</mark></p>
+            </div>
+            <div class="field">
+              <span class="field-label">Result</span>
+              <p><mark>[What was the result or current milestone achieved?]</mark></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <h3>natHacks 2026</h3>
+          <div class="field-group">
+            <div class="field">
+              <span class="field-label">Problem</span>
+              <p><mark>[What problem were you solving at natHacks 2026?]</mark></p>
+            </div>
+            <div class="field">
+              <span class="field-label">Decision</span>
+              <p><mark>[What decision did you make during the hackathon, and why?]</mark></p>
+            </div>
+            <div class="field">
+              <span class="field-label">Result</span>
+              <p><mark>[What was the result or outcome of the project?]</mark></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <h3>STARR Student Rocketry Research Payload Team</h3>
+          <div class="field-group">
+            <div class="field">
+              <span class="field-label">Problem</span>
+              <p><mark>[What biological or payload problem were you solving for the rocketry team?]</mark></p>
+            </div>
+            <div class="field">
+              <span class="field-label">Decision</span>
+              <p><mark>[What design or experimental decision did you make, and why?]</mark></p>
+            </div>
+            <div class="field">
+              <span class="field-label">Result</span>
+              <p><mark>[What was the testing or flight result?]</mark></p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- WORK SECTION -->
+    <section>
+      <h2>Work &amp; Experience</h2>
+      <ul class="work-list">
+        <!-- ADD NEW WORK HERE: copy one item, paste it at the top, edit it -->
+        <li class="work-item">
+          <span class="work-date"><mark>[2026]</mark></span>
+          <span class="work-title">natHacks 2026 Hackathon Participant</span>
+        </li>
+        <li class="work-item">
+          <span class="work-date"><mark>[Date]</mark></span>
+          <span class="work-title">STARR Student Rocketry Research Payload Team Member</span>
+        </li>
+        <li class="work-item">
+          <span class="work-date"><mark>[Date]</mark></span>
+          <span class="work-title">Wet Lab Operations: Live/Dead Tissue Handling &amp; Organic Synthesis</span>
+        </li>
+        <li class="work-item">
+          <span class="work-date"><mark>[Date]</mark></span>
+          <span class="work-title">Biological Data Analysis using R, Python, and Excel</span>
+        </li>
+        <li class="work-item">
+          <span class="work-date"><mark>[Date]</mark></span>
+          <span class="work-title">Technical Documentation and Data Management in Microsoft Software</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section>
+      <h2>About</h2>
+      <p class="about-bio">
+        I am a biology student focused on working at the intersection of biological science and artificial intelligence. My primary interest lies in solving the risk of turning manipulated tissue into cancerous tissue when attempting to return cells to their initial state. By extracting regeneration mechanisms from transverse fission, I aim to apply safer protocols to human bone tissue regeneration.
+      </p>
+
+      <ul class="contact-grid">
+        <li><a href="mailto:yuyao18@ualberta.ca" class="contact-link">Email: yuyao18@ualberta.ca</a></li>
+        <li><a href="https://www.linkedin.com/in/yuyao-song-0a8386413" class="contact-link" rel="me">LinkedIn</a></li>
+        <li><a href="https://github.com/YuyaoSaggieSong" class="contact-link" rel="me">GitHub</a></li>
+      </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>Yuyao Song</span>
+      <span>https://yuyaosaggiesong.github.io</span>
+    </footer>
+
+  </div>
+</body>
+</html>
